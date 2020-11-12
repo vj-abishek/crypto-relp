@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+const crypto = require('crypto');
 
 const decrypt = (SharedSecret, encryptedMessage) => {
 
@@ -22,4 +22,4 @@ const decrypt = (SharedSecret, encryptedMessage) => {
     return decrypt;
 }
 
-export default decrypt;
+module.exports = decrypt;
