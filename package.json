@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build index.js"
+    "build": "parcel build index.js",
+    "browersify": "browserify index.js -o crypto.js"
   },
   "keywords": [],
   "author": "",
