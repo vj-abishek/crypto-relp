@@ -26612,12 +26612,12 @@ const decrypt = (SharedSecret, encryptedMessage) => {
 
     Decipher.setAuthTag(Buffer.from(bobAuthtag, 'hex'));
 
-    let decrypt = Decipher.update(bobEncrypted, 'hex', 'utf8');
-    decrypt += Decipher.final('utf8');
+    let decrypted = Decipher.update(bobEncrypted, 'hex', 'utf8');
+    decrypted += Decipher.final('utf8');
 
-    return decrypt;
+    return decrypted;
 }
 
-module.exports = decrypt;
+module.exports.decrypt = decrypt;
 }).call(this)}).call(this,require("buffer").Buffer)
 },{"buffer":64,"crypto":72}]},{},[188]);

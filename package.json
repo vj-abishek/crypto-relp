@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "parcel build index.js",
-    "browersify": "browserify index.js -o crypto.js"
+    "browserify": "browserify -s Decrypt -r . | minify > crypto.min.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-minify": "^0.5.1",
     "parcel-bundler": "^1.12.4"
   }
 }

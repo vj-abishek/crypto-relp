@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-const decrypt = (SharedSecret, encryptedMessage) => {
+const Decrypt = (SharedSecret, encryptedMessage) => {
 
     const bobPayload = Buffer.from(encryptedMessage, 'base64').toString('hex');
 
@@ -16,10 +16,10 @@ const decrypt = (SharedSecret, encryptedMessage) => {
 
     Decipher.setAuthTag(Buffer.from(bobAuthtag, 'hex'));
 
-    let decrypt = Decipher.update(bobEncrypted, 'hex', 'utf8');
-    decrypt += Decipher.final('utf8');
+    let decrypted = Decipher.update(bobEncrypted, 'hex', 'utf8');
+    decrypted += Decipher.final('utf8');
 
-    return decrypt;
+    return decrypted;
 }
 
-module.exports = decrypt;
+module.exports = Decrypt;
